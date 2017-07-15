@@ -9,21 +9,10 @@
  */
 public class Solution {
     public List<Integer> list = new ArrayList<Integer>();
-    public List<Integer> preorderTraversal(TreeNode root) {
-        preOrder(root);
-        return list;
-    }
-    
-    public void preOrder(TreeNode node){
-        if(node == null){
-            return;
-        }
-        list.add(node.val);
-        if(node.left != null){
-            preOrder(node.left);
-        }
-        if(node.right != null){
-            preOrder(node.right);
-        }
-    }
+    if(root == null) return list;
+    list.add(root.val);
+    list.addAll(preorderTraveral(root.left));
+    list.addAll(preorderTraveral(root.right));
+    return list;
+
 }
